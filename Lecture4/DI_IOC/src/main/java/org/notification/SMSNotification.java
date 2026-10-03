@@ -1,5 +1,8 @@
 package org.notification;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SMSNotification implements  NotificationService{
 
     @Override
