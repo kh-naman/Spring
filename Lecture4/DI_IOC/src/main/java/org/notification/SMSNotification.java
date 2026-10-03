@@ -3,8 +3,7 @@ package org.notification;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component
-@Primary
+
 public class SMSNotification implements  NotificationService{
 
     @Override

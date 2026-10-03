@@ -5,16 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
 public class OrderService
 {
-    private final NotificationService notificationService;
+    private NotificationService notificationService;
 
-    @Autowired
-    public OrderService( NotificationService notificationService)
-    {
-        this.notificationService = notificationService;
-    }
+
+//    public OrderService( NotificationService notificationService)
+//    {
+//        this.notificationService = notificationService;
+//    }
 
     void placeOrder()
     {
@@ -23,8 +22,9 @@ public class OrderService
         notificationService.sendNotification(message);
     }
 
-//    public void setNotificationService(NotificationService notificationService)
-//    {
-//        this.notificationService = notificationService;
-//    }
+    @Autowired
+    public void setNotificationService(@Qualifier("Email") NotificationService notificationService)
+    {
+        this.notificationService = notificationService;
+    }
 }
