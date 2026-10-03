@@ -11,7 +11,7 @@ public class OrderService
     private final NotificationService notificationService;
 
     @Autowired
-    public OrderService(@Qualifier("emailService") NotificationService notificationService)
+    public OrderService( NotificationService notificationService)
     {
         this.notificationService = notificationService;
     }
